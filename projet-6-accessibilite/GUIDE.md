@@ -16,7 +16,15 @@ L'agent évalue l'accessibilité d'une page web selon les critères WCAG, entiè
 
 L'enchaînement est fixe : l'équipe insiste sur le fait qu'il s'agit d'un flux de travail outillé, et non d'un agent autonome, parce qu'un outil de test doit être reproductible. Chaque constat, de chaque flux, est validé contre un schéma strict ; sa source est fixée par le programme, jamais par le modèle ; il est relié à son critère WCAG et à son niveau (A, AA, AAA). L'agrégation fusionne et ordonne les constats, puis écrit un rapport Markdown, un rapport HTML et un fichier JSON. Chaque exécution est journalisée avec sa configuration, son modèle et ses durées.
 
-Un commutateur permet d'appeler un modèle commercial (Claude ou Gemini) à la place du modèle local, pour servir d'instrument de comparaison seulement.
+Un commutateur permet d'appeler un modèle commercial (Claude ou Gemini) à la place du modèle local, pour servir d'instrument de comparaison seulement. L'équipe a fait toutes les mesures de son rapport avec Gemini 3.7 Flash. La valeur `gemini-3.6-flash` inscrite dans `config.py` n'est qu'un défaut de repli : la variable d'environnement `GEMINI_MODEL` l'écrase au lancement. Pour reproduire l'évaluation, fixez la version avant d'exécuter l'agent :
+
+```
+# macOS, Linux ou WSL
+export GEMINI_MODEL=gemini-3.7-flash
+
+# PowerShell (Windows)
+$env:GEMINI_MODEL = "gemini-3.7-flash"
+```
 
 ## 2. Essayer sans modèle (10 minutes)
 
@@ -67,7 +75,7 @@ L'équipe a évalué le prototype sur trois pages : une page de test avec treize
 | 4 | Aucune règle de décision ne résume l'audit. | Le rapport liste des constats, mais ne dit pas si la page doit être corrigée ou revue par une personne ; il ne doit jamais affirmer une conformité. |
 | 5 | Le flux visuel ne propose pas de textes alternatifs, et rien n'encadre une telle proposition. | Un texte alternatif fluide mais faux est pire qu'un texte absent : il ne déclenche plus aucune règle. |
 | 6 | Le lanceur fourni (`start-ollama.bat`) et une partie des instructions visent Windows. | L'installation sur macOS et Linux est moins documentée. |
-| 7 | Le nom du modèle commercial de comparaison est réglé par défaut à `gemini-3.6-flash`, alors que le rapport de l'équipe mentionne Gemini 3.7 Flash. | La version exacte utilisée pour l'évaluation est à confirmer. |
+| 7 | Le nom du modèle commercial de comparaison est réglé par défaut à `gemini-3.6-flash` dans `config.py`, alors que toutes les mesures du rapport ont été faites avec `gemini-3.7-flash` (131 appels sur 143 du journal d'exécution de l'équipe), fixé par la variable `GEMINI_MODEL`. | Sans cette variable, une nouvelle exécution n'utilise pas le modèle de l'évaluation. Une bonne correction : écrire dans le journal et dans le rapport le nom exact du modèle appelé, et refuser une comparaison si ce nom n'est pas celui que l'expérience prévoit. |
 | 8 | La licence nomme trois auteurs, alors que le rapport de l'équipe en nomme quatre (Gabriel Gefin n'y figure pas). | À confirmer avec l'équipe. |
 
 ## 6. Dépannage
