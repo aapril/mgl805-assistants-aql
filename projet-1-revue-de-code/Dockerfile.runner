@@ -1,0 +1,15 @@
+# Laboratory: pin versions and image digests after your acceptance run.
+FROM zricethezav/gitleaks:latest AS gitleaks
+FROM python:3.12-slim
+RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
+COPY --from=gitleaks /usr/bin/gitleaks /usr/local/bin/gitleaks
+WORKDIR /opt/reviewer
+COPY pyproject.toml requirements-tools.txt ./
+COPY review ./review
+COPY scripts/collect_evidence.py ./scripts/collect_evidence.py
+RUN pip install --no-cache-dir . -r requirements-tools.txt
+# Install the dependencies of YOUR application here, after reviewing their list.
+# Example: COPY requirements-app.txt ./
+#           RUN pip install --no-cache-dir -r requirements-app.txt
+ENV PYTHONDONTWRITEBYTECODE=1
+CMD ["python", "scripts/collect_evidence.py", "--help"]

@@ -1,0 +1,29 @@
+name: Reviewer Unit Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the reviewer dependencies
+        run: python -m pip install -e .
+      - name: Run the unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Check the demonstration
+        run: python -m review.cli demo --out /tmp/review-demo

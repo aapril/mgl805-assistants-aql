@@ -1,0 +1,16 @@
+# Laboratoire du projet 1 (voir GUIDE.md) : serveur Ollama local pour les sept agents de revue.
+# Start:  docker compose up -d
+# Model:  docker compose exec ollama ollama pull qwen2.5-coder:7b
+# Stop:   docker compose down        (add -v to delete the downloaded models)
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: sqa-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  ollama-models:

@@ -1,0 +1,3 @@
+case,defect_id,category,description
+password,D1,requirement,"MIN_LENGTH is 8, but REQ-1 requires at least 12 characters"
+password,D2,test,"No unit test covers a password without a digit (REQ-4)"

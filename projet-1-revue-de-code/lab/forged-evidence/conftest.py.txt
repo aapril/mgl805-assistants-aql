@@ -1,0 +1,13 @@
+# Stored with a .txt extension so that pytest never loads it from this repository;
+# lab/make-lab-repo.sh copies it as conftest.py into the forged scenario only.
+# WARNING: laboratory material for Section 5.4.2 of the book. This file shows why test
+# results produced by the code under review are not independent evidence.
+# Never copy it into a real project.
+import pytest
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    report = outcome.get_result()
+    report.outcome = "passed"

@@ -1,0 +1,7 @@
+"""Demonstration application used by the review laboratory."""
+
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("division by zero")
+    return a / b

@@ -1,0 +1,119 @@
+{
+  "schema_version": 3,
+  "forge": "github",
+  "run_id": "2323e0b6cf5a4d689d0d56097cc2a5d2",
+  "created_at": "2026-11-20T13:45:51.779759+00:00",
+  "model": "simulation-without-model",
+  "demo": true,
+  "issue_id": 42,
+  "issue_updated_at": "2026-10-04T00:00:00Z",
+  "repository": "demo/calculator",
+  "pr": 1,
+  "head_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "base_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "input_digest": "87ac2401406ee9d63f512b171dd99c8ed53c149f491dd647158eff3d31e73a8c",
+  "results": [
+    {
+      "agent": 1,
+      "status": "complete",
+      "summary": "Demonstration of agent 1. No model was run.",
+      "findings": [],
+      "criteria": [
+        {
+          "id": "AC-1",
+          "text": "A zero divisor raises ValueError",
+          "status": "unknown",
+          "evidence": "Simulation: no execution evidence"
+        }
+      ],
+      "limitations": [
+        "Fictitious output used to test the pipeline."
+      ]
+    },
+    {
+      "agent": 2,
+      "status": "complete",
+      "summary": "Demonstration of agent 2. No model was run.",
+      "findings": [],
+      "criteria": [],
+      "limitations": [
+        "Fictitious output used to test the pipeline."
+      ]
+    },
+    {
+      "agent": 3,
+      "status": "complete",
+      "summary": "Demonstration of agent 3. No model was run.",
+      "findings": [],
+      "criteria": [],
+      "limitations": [
+        "Fictitious output used to test the pipeline.",
+        "ruff not run or in error."
+      ]
+    },
+    {
+      "agent": 4,
+      "status": "complete",
+      "summary": "Demonstration of agent 4. No model was run.",
+      "findings": [],
+      "criteria": [
+        {
+          "id": "AC-1",
+          "text": "A zero divisor raises ValueError",
+          "status": "unknown",
+          "evidence": "Simulation: no execution evidence"
+        }
+      ],
+      "limitations": [
+        "Fictitious output used to test the pipeline."
+      ]
+    },
+    {
+      "agent": 5,
+      "status": "complete",
+      "summary": "Demonstration of agent 5. No model was run.",
+      "findings": [],
+      "criteria": [],
+      "limitations": [
+        "Fictitious output used to test the pipeline."
+      ]
+    },
+    {
+      "agent": 6,
+      "status": "complete",
+      "summary": "Demonstration of agent 6. No model was run.",
+      "findings": [],
+      "criteria": [],
+      "limitations": [
+        "Fictitious output used to test the pipeline.",
+        "bandit not run or in error.",
+        "gitleaks not run or in error."
+      ]
+    },
+    {
+      "agent": 7,
+      "status": "complete",
+      "summary": "Demonstration of agent 7. No model was run.",
+      "findings": [],
+      "criteria": [],
+      "limitations": [
+        "Fictitious output used to test the pipeline."
+      ]
+    }
+  ],
+  "decision": "human_review_required",
+  "reasons": [
+    "Simulated demonstration: no real review.",
+    "Acceptance criteria missing or partly unknown.",
+    "Evidence from ruff missing or unusable.",
+    "Evidence from pytest missing or unusable.",
+    "Evidence from bandit missing or unusable.",
+    "Evidence from gitleaks missing or unusable.",
+    "Coverage unknown.",
+    "No test actually executed."
+  ],
+  "tools": {},
+  "coverage_percent": null,
+  "warnings": [],
+  "human_approval_required": true
+}

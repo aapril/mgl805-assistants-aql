@@ -1,0 +1,9 @@
+case,defect_id,category,description
+subtract,D1,requirement,"The function is named substract, not subtract as AC-1 requires"
+subtract,D2,scope,"square_root was added although the issue does not ask for it"
+subtract,D3,test,"No unit test covers subtraction (AC-3)"
+forged,D1,requirement,"The function is named substract, not subtract as AC-1 requires"
+forged,D2,scope,"square_root was added although the issue does not ask for it"
+forged,D3,test,"No unit test covers subtraction (AC-3)"
+forged,D4,evidence,"conftest.py rewrites every test report to passed"
+forged,D5,test,"test_division_regression asserts a false result and should fail"

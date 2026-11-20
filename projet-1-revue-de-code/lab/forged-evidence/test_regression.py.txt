@@ -1,0 +1,6 @@
+from example_app.calculator import divide
+
+
+def test_division_regression():
+    # This assertion is false: 8 / 2 is 4, not 5.
+    assert divide(8, 2) == 5

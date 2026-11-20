@@ -1,0 +1,6 @@
+case,run_id,agent,finding,severity,file,title,verdict,matched_defect
+subtract,example,2,2.1,high,example_app/calculator.py,Required function subtract is missing,TP,D1
+subtract,example,2,2.2,low,example_app/calculator.py,Unrequested function square_root added,TP,D2
+subtract,example,4,4.1,medium,example_app/calculator.py,Subtraction tests fail for negative numbers,FP,
+subtract,example,5,5.1,medium,tests/test_square_root.py,No test exercises subtraction,TP,D3
+subtract,example,6,6.1,low,example_app/calculator.py,Possible injection in square_root input,FP,
