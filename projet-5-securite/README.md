@@ -2,7 +2,8 @@
 
 L'agent de Clement Ledouble, Kamal Chafik, Leelou Lebrun, Coumba Leonie Samb Touré et Ted Barbier (automne 2026) aide à interpréter les rapports du scanner dynamique ZAP de façon traçable. Un modèle local (`qwen3.5:9b` servi par Ollama) n'accède aux données que par quatre fonctions : résumer le dernier rapport, lister ses constats, détailler un constat et chercher dans une base OWASP Top 10:2025 indexée dans ChromaDB. Un service FastAPI en lecture seule lit les rapports ; l'agent ne lance pas de scans.
 
-- **Dépôt de l'équipe** : https://github.com/KamalChafik/mgl805-security-rag-agent
+- **Dépôt de l'équipe (licence MIT)** : https://github.com/KamalChafik/mgl805-security-rag-agent
+- **Modèles utilisés** : `qwen3.5:9b` (identifiant Ollama `56671c2ab938`, 6,6 Go) et `qwen3-embedding:0.6b` (identifiant `ac6da0dfba84`, 639 Mo). Vérifiez l'identifiant avec `ollama list` : un même nom de modèle peut désigner une autre version plus tard.
 - **Installation complète** : le `README` du dépôt et l'annexe I du rapport de l'équipe. Le modèle demande une carte graphique d'environ 12 Go.
 
 ## Premiers pas sans modèle

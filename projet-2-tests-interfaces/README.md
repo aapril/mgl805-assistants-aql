@@ -2,7 +2,6 @@
 
 Ce dossier contient le code de départ du projet 2 du cours MGL805 : le moteur d'IA préparé par Andrew Phillips à l'été 2026 pour générer des cas de test d'interfaces à partir de récits Jira, de cas de test Zephyr et de maquettes Balsamiq. Il ingère ces données dans Supabase, calcule des plongements vectoriels (pgvector) et contient le code d'affinage d'un modèle Qwen multimodal. Le pipeline d'inférence et de RAG reste à construire, et l'équipe MiBioKey passant de Balsamiq à Figma, l'agent doit aussi lire les maquettes Figma (guide, section 9).
 
-- **Énoncé du projet** : [`ENONCE.md`](ENONCE.md)
 - **Guide d'installation et état du code** : [`GUIDE.md`](GUIDE.md)
 - **Schéma de la base Supabase** : [`schema.sql`](schema.sql)
 - **Cas d'utilisation fictif pour démarrer** : [`exemple-donnees/`](exemple-donnees/)

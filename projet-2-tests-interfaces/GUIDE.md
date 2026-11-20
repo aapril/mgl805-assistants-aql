@@ -1,6 +1,6 @@
 # Guide du projet 2 : agent de tests d'interfaces utilisateurs
 
-Ce guide explique comment installer le code de départ du projet 2, créer votre propre base Supabase, ingérer des données d'exemple et comprendre l'état exact du code. L'énoncé du travail est dans [`ENONCE.md`](ENONCE.md).
+Ce guide explique comment installer le code de départ du projet 2, créer votre propre base Supabase, ingérer des données d'exemple et comprendre l'état exact du code. L'énoncé du travail est publié sur Moodle.
 
 Le code de départ a été écrit par Andrew Phillips à l'été 2026. Il prépare des données Jira (récits utilisateurs), Zephyr (cas de test) et Balsamiq (maquettes), calcule des plongements vectoriels stockés avec pgvector dans Supabase et contient un script d'affinage (fine-tuning) d'un modèle Qwen multimodal pour générer des cas de test. C'est un **moteur à compléter**, pas encore un agent : le pipeline d'inférence et de RAG n'existe pas, et l'affinage n'a été exécuté qu'une fois, sans jeu de validation ; ses adaptateurs ne sont plus disponibles.
 

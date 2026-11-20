@@ -368,7 +368,7 @@ Les deux autres prototypes du cours sont dans leurs propres dépôts ; le dossie
 - Vérification croisée : rejeter automatiquement tout constat visuel qui contredit la structure de la page (par exemple « texte dans une image » là où il n'y a pas d'image) ;
 - Règle de décision : recommander une correction pour toute violation du vérificateur ou tout échec bien prouvé, et retourner `human_review_required` dans tous les autres cas, sans jamais suggérer une conformité.
 
-**Sécurité applicative (projet 5).** L'agent de Ledouble, Chafik, Lebrun, Touré et Barbier, à https://github.com/KamalChafik/mgl805-security-rag-agent. Il interprète des rapports ZAP existants avec `qwen3.5:9b` servi par Ollama, un service FastAPI en lecture seule, quatre fonctions Open WebUI et une base OWASP Top 10:2025 dans ChromaDB ; il ne lance pas de scans. Le modèle demande une carte graphique d'environ 12 Go ; l'annexe I de son rapport donne l'installation. Ses dix tests hors ligne s'exécutent sans modèle :
+**Sécurité applicative (projet 5).** L'agent de Ledouble, Chafik, Lebrun, Touré et Barbier, publié sous licence MIT à https://github.com/KamalChafik/mgl805-security-rag-agent. Il interprète des rapports ZAP existants avec `qwen3.5:9b` (identifiant Ollama `56671c2ab938`, 6,6 Go) et le modèle de plongements `qwen3-embedding:0.6b`, servis par Ollama, un service FastAPI en lecture seule, quatre fonctions Open WebUI et une base OWASP Top 10:2025 dans ChromaDB ; il ne lance pas de scans. Le modèle demande une carte graphique d'environ 12 Go ; l'annexe I de son rapport donne l'installation. Ses dix tests hors ligne s'exécutent sans modèle :
 
 ```
 % git clone https://github.com/KamalChafik/mgl805-security-rag-agent.git

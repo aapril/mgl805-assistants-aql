@@ -1,13 +1,13 @@
 # MGL805 · Assistants d'AQL fondés sur l'IA : site d'accompagnement
 
-Site d'accompagnement des projets du cours **MGL805, Vérification et assurance qualité de logiciels**, à l'École de technologie supérieure (ÉTS), Montréal. Il contient le code, les instructions détaillées et les données de laboratoire des assistants d'assurance qualité logicielle construits par les équipes du cours, ainsi qu'un gabarit pour construire le vôtre.
+Site d'accompagnement des projets du cours **MGL805, Vérification et assurance qualité de logiciels**, à l'École de technologie supérieure (ÉTS), Montréal. Il contient le code, les instructions détaillées et les données de laboratoire (les énoncés des travaux sont publiés sur Moodle) des assistants d'assurance qualité logicielle construits par les équipes du cours, ainsi qu'un gabarit pour construire le vôtre.
 
 Le rôle d'un groupe d'AQL n'est plus seulement d'auditer à la fin d'un projet : il fournit aussi aux développeurs des outils automatisés, et maintient des normes, des mesures et des audits légers pour s'assurer que ces outils sont bien utilisés. Les assistants de ce site appliquent tous la même architecture : l'artefact évalué n'est jamais digne de confiance, des outils déterministes produisent les preuves, un modèle à poids ouverts exécuté localement analyse ce que les outils ne peuvent pas décider, sous des contrats validés, une règle calcule la recommandation et une personne décide.
 
 | Dossier | Contenu | Point de départ |
 |---|---|---|
-| [`projet-1-revue-de-code/`](projet-1-revue-de-code/) | Agent de revue de code : sept agents, preuves isolées, vérification d'ancrage, GitHub Actions, évaluation | [`ENONCE.md`](projet-1-revue-de-code/ENONCE.md), [`GUIDE.md`](projet-1-revue-de-code/GUIDE.md) |
-| [`projet-2-tests-interfaces/`](projet-2-tests-interfaces/) | Agent de tests d'interfaces : moteur RAG et affinage Qwen à compléter, passage de Balsamiq à Figma (code de départ d'Andrew Phillips) | [`ENONCE.md`](projet-2-tests-interfaces/ENONCE.md), [`GUIDE.md`](projet-2-tests-interfaces/GUIDE.md) |
+| [`projet-1-revue-de-code/`](projet-1-revue-de-code/) | Agent de revue de code : sept agents, preuves isolées, vérification d'ancrage, GitHub Actions, évaluation | [`GUIDE.md`](projet-1-revue-de-code/GUIDE.md) |
+| [`projet-2-tests-interfaces/`](projet-2-tests-interfaces/) | Agent de tests d'interfaces : moteur RAG et affinage Qwen à compléter, passage de Balsamiq à Figma (code de départ d'Andrew Phillips) | [`GUIDE.md`](projet-2-tests-interfaces/GUIDE.md) |
 | [`projet-5-securite/`](projet-5-securite/) | Agent d'interprétation traçable des rapports ZAP (dépôt de l'équipe) | [`README.md`](projet-5-securite/README.md) |
 | [`projet-6-accessibilite/`](projet-6-accessibilite/) | Agent d'accessibilité WCAG à trois flux (dépôt de l'équipe) | [`README.md`](projet-6-accessibilite/README.md) |
 | [`gabarit-assistant/`](gabarit-assistant/) | Gabarit pour construire votre propre assistant, avec sa fiche de spécification | [`README.md`](gabarit-assistant/README.md) |

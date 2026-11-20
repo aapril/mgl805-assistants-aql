@@ -2,7 +2,6 @@
 
 Ce dossier contient l'assistant de revue de code du projet 1 du cours MGL805 : sept agents, un modèle à poids ouverts exécuté localement avec Ollama, des preuves déterministes collectées dans un conteneur isolé, une vérification d'ancrage des preuves et une règle de décision calculée par le programme. L'assistant **recommande ; il n'approuve et ne fusionne jamais**. Une personne prend la décision finale.
 
-- **Énoncé de la version 2 du projet** : [`ENONCE.md`](ENONCE.md)
 - **Instructions complètes** (installation, exemple commenté, GitHub Actions, preuve falsifiée, évaluation, dépannage) : [`GUIDE.md`](GUIDE.md)
 - **Toutes les commandes, prêtes à copier** : [`exemples_commandes.md`](exemples_commandes.md)
 
