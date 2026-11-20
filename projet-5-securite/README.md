@@ -2,24 +2,26 @@
 
 L'agent de Clement Ledouble, Kamal Chafik, Leelou Lebrun, Coumba Leonie Samb Touré et Ted Barbier (automne 2026) aide à interpréter les rapports du scanner dynamique ZAP de façon traçable. Un modèle local (`qwen3.5:9b` servi par Ollama) n'accède aux données que par quatre fonctions : résumer le dernier rapport, lister ses constats, détailler un constat et chercher dans une base OWASP Top 10:2025 indexée dans ChromaDB. Un service FastAPI en lecture seule lit les rapports ; l'agent ne lance pas de scans.
 
-- **Dépôt de l'équipe (licence MIT)** : https://github.com/KamalChafik/mgl805-security-rag-agent
+- **Guide d'utilisation, état vérifié et pistes d'amélioration** : [`GUIDE.md`](GUIDE.md)
+- **Code de l'équipe et son README d'installation** : [`code-depart/`](code-depart/), copie du dépôt de l'équipe (licence MIT) : https://github.com/KamalChafik/mgl805-security-rag-agent
 - **Modèles utilisés** : `qwen3.5:9b` (identifiant Ollama `56671c2ab938`, 6,6 Go) et `qwen3-embedding:0.6b` (identifiant `ac6da0dfba84`, 639 Mo). Vérifiez l'identifiant avec `ollama list` : un même nom de modèle peut désigner une autre version plus tard.
-- **Installation complète** : le `README` du dépôt et l'annexe I du rapport de l'équipe. Le modèle demande une carte graphique d'environ 12 Go.
+- **Installation complète** : section 3 du guide et README de l'équipe. Le modèle demande une carte graphique d'environ 12 Go.
 
 ## Premiers pas sans modèle
 
 Les dix tests hors ligne s'exécutent sans modèle ni scanner, sur un rapport ZAP synthétique :
 
 ```
-git clone https://github.com/KamalChafik/mgl805-security-rag-agent.git
-cd mgl805-security-rag-agent
+git clone https://github.com/aapril/mgl805-assistants-aql.git
+cd mgl805-assistants-aql/projet-5-securite/code-depart
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r services/security-agent/requirements.txt -r requirements-tools.txt
 python -m pytest -q
+python scripts/summarize_zap_report.py tests/fixtures/synthetic-zap.json
 ```
 
-La dernière commande doit afficher `10 passed`. Le rapport synthétique est dans `tests/fixtures/synthetic-zap.json`.
+Les tests doivent afficher `10 passed`, et le script de résumé, deux alertes distinctes (une High, une Low). Le rapport synthétique est dans `tests/fixtures/synthetic-zap.json`.
 
 ## Ce que le prototype enseigne
 
