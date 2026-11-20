@@ -1,0 +1,43 @@
+{
+  "limits": {
+    "max_files": 2000,
+    "max_file_bytes": 500000,
+    "exclude_dirs": [".git", ".venv", "venv", "node_modules", "__pycache__", "build", "dist", "runs"],
+    "excerpts": 3,
+    "excerpt_lines": 60
+  },
+  "layers": {
+    "api": ["library.api"],
+    "services": ["library.services"],
+    "domain": ["library.domain"],
+    "infrastructure": ["library.infrastructure"]
+  },
+  "allowed": {
+    "api": ["services", "domain"],
+    "services": ["domain", "infrastructure"],
+    "infrastructure": ["domain"],
+    "domain": []
+  },
+  "thresholds": {
+    "complexity": 10,
+    "function_lines": 40,
+    "duplicate_window": 6
+  },
+  "gates": [
+    {"id": "ARCH-1", "text": "No dependency violates the layer rules.", "metric": "layer_violations", "max": 0},
+    {"id": "ARCH-2", "text": "No import cycle between modules.", "metric": "cycles", "max": 0},
+    {"id": "DEBT-1", "text": "No function has a cyclomatic complexity above 10.", "metric": "max_complexity", "max": 10},
+    {"id": "DEBT-2", "text": "Duplicated lines are below 5% of the code.", "metric": "duplication_pct", "max": 5.0},
+    {"id": "DEBT-3", "text": "The technical debt ratio is below 5%.", "metric": "debt_ratio_pct", "max": 5.0},
+    {"id": "DEBT-4", "text": "No function is longer than 40 lines.", "metric": "max_function_lines", "max": 40}
+  ],
+  "remediation_minutes": {
+    "layer": 60,
+    "cycle": 120,
+    "complexity_point": 10,
+    "long_function": 30,
+    "duplicate_block": 30,
+    "marker": 15
+  },
+  "development_minutes_per_line": 30
+}
