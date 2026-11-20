@@ -1,0 +1,31 @@
+{
+  "story_key": "DEMO-1",
+  "test_count": 2,
+  "testCases": [
+    {
+      "key": "DEMO-T1",
+      "name": "Réserver un livre non disponible affiche la confirmation et ajoute la réservation",
+      "status": "Approved",
+      "objective": "Vérifier qu'un abonné peut réserver un livre non disponible et que la réservation apparaît dans Mes réservations",
+      "precondition": "- L'abonné est connecté\n- Le livre « Le Survenant » existe et n'est pas disponible",
+      "folder": "catalogue/reservation",
+      "steps": [
+        {"index": "0", "description": "Ouvrir la fiche du livre « Le Survenant »", "expectedResult": "La fiche du livre s'affiche avec le statut « Non disponible » et le bouton « Réserver »"},
+        {"index": "1", "description": "Cliquer sur « Réserver »", "expectedResult": "Le message « Votre réservation est confirmée » s'affiche"},
+        {"index": "2", "description": "Ouvrir l'onglet « Mes réservations »", "expectedResult": "La réservation apparaît avec le titre, la date du jour et le rang 1"}
+      ]
+    },
+    {
+      "key": "DEMO-T2",
+      "name": "Réserver deux fois le même livre est refusé",
+      "status": "Approved",
+      "objective": "Vérifier qu'un abonné ne peut pas réserver deux fois le même livre",
+      "precondition": "- L'abonné est connecté\n- L'abonné a déjà réservé « Le Survenant »",
+      "folder": "catalogue/reservation",
+      "steps": [
+        {"index": "0", "description": "Ouvrir la fiche du livre « Le Survenant »", "expectedResult": "La fiche du livre s'affiche"},
+        {"index": "1", "description": "Cliquer sur « Réserver »", "expectedResult": "Le message « Vous avez déjà réservé ce livre » s'affiche et aucune nouvelle réservation n'est créée"}
+      ]
+    }
+  ]
+}

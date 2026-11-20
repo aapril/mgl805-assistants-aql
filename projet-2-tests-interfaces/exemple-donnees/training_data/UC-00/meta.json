@@ -1,0 +1,9 @@
+{
+  "id": "UC-00",
+  "story_ref": "DEMO-1",
+  "module": "DEMO",
+  "complexity": "simple",
+  "zephyr_test_keys": ["DEMO-T1", "DEMO-T2"],
+  "mockup_ref": "mockups/etape_01.png",
+  "notes": "Exemple fictif fourni avec le site d'accompagnement MGL805 ; aucune donnée réelle."
+}

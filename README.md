@@ -7,6 +7,7 @@ Le rôle d'un groupe d'AQL n'est plus seulement d'auditer à la fin d'un projet 
 | Dossier | Contenu | Point de départ |
 |---|---|---|
 | [`projet-1-revue-de-code/`](projet-1-revue-de-code/) | Agent de revue de code : sept agents, preuves isolées, vérification d'ancrage, GitHub Actions, évaluation | [`ENONCE.md`](projet-1-revue-de-code/ENONCE.md), [`GUIDE.md`](projet-1-revue-de-code/GUIDE.md) |
+| [`projet-2-tests-interfaces/`](projet-2-tests-interfaces/) | Agent de tests d'interfaces : moteur RAG et affinage Qwen à compléter, passage de Balsamiq à Figma (code de départ d'Andrew Phillips) | [`ENONCE.md`](projet-2-tests-interfaces/ENONCE.md), [`GUIDE.md`](projet-2-tests-interfaces/GUIDE.md) |
 | [`projet-5-securite/`](projet-5-securite/) | Agent d'interprétation traçable des rapports ZAP (dépôt de l'équipe) | [`README.md`](projet-5-securite/README.md) |
 | [`projet-6-accessibilite/`](projet-6-accessibilite/) | Agent d'accessibilité WCAG à trois flux (dépôt de l'équipe) | [`README.md`](projet-6-accessibilite/README.md) |
 | [`gabarit-assistant/`](gabarit-assistant/) | Gabarit pour construire votre propre assistant, avec sa fiche de spécification | [`README.md`](gabarit-assistant/README.md) |
@@ -21,4 +22,4 @@ Le chapitre 5 du livre *Software Quality Assurance: Software Engineering Quality
 
 ## Licences
 
-Le matériel rédigé pour le cours est sous licence MIT (voir `LICENSE`). Le code repris des équipes conserve sa licence et ses avis de droit d'auteur, indiqués dans son dossier. Les prototypes des projets 5 et 6 restent dans les dépôts de leurs équipes.
+Le matériel rédigé pour le cours est sous licence MIT (voir `LICENSE`). Le code repris des équipes conserve sa licence et ses avis de droit d'auteur, indiqués dans son dossier. Les prototypes des projets 5 et 6 restent dans les dépôts de leurs équipes. Les données du projet 2 appartiennent au projet MiBioKey du CRCHUM et ne sont pas publiées dans ce site.

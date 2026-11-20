@@ -1,0 +1,10 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+# Données réelles : jamais dans un dépôt public
+data/training_data/
+data/validation_data/
+data/wireframe_images/
+adapters/
+lora_config.yaml
