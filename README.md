@@ -11,7 +11,7 @@ Le rôle d'un groupe d'AQL n'est plus seulement d'auditer à la fin d'un projet 
 | [`projet-3-tests-api/`](projet-3-tests-api/) | Agent de tests d'API : scénarios générés à partir d'une spécification OpenAPI, exécutés avec Pytest | [`GUIDE.md`](projet-3-tests-api/GUIDE.md) |
 | [`projet-4-tests-performance/`](projet-4-tests-performance/) | Agent de tests de performance : Qwen planifie la charge et explique les résultats, le programme mesure et décide | [`GUIDE.md`](projet-4-tests-performance/GUIDE.md) |
 | [`projet-5-securite/`](projet-5-securite/) | Agent d'interprétation traçable des rapports ZAP : modèle local, RAG sur l'OWASP Top 10, service en lecture seule | [`GUIDE.md`](projet-5-securite/GUIDE.md) |
-| [`projet-6-accessibilite/`](projet-6-accessibilite/) | Agent d'accessibilité WCAG à trois flux (dépôt de l'équipe) | [`README.md`](projet-6-accessibilite/README.md) |
+| [`projet-6-accessibilite/`](projet-6-accessibilite/) | Agent d'accessibilité WCAG à trois flux : règles axe-core, test clavier scripté, modèle de vision local | [`GUIDE.md`](projet-6-accessibilite/GUIDE.md) |
 | [`gabarit-assistant/`](gabarit-assistant/) | Gabarit pour construire votre propre assistant, avec sa fiche de spécification | [`README.md`](gabarit-assistant/README.md) |
 
 ## Environnement de travail
@@ -24,4 +24,4 @@ Le chapitre 5 du livre *Software Quality Assurance: Software Engineering Quality
 
 ## Licences
 
-Le matériel rédigé pour le cours est sous licence MIT (voir `LICENSE`). Le code repris des équipes conserve sa licence et ses avis de droit d'auteur, indiqués dans son dossier. Le prototype du projet 6 reste dans le dépôt de son équipe. Les données du projet 2 appartiennent au projet MiBioKey du CRCHUM et ne sont pas publiées dans ce site.
+Le matériel rédigé pour le cours est sous licence MIT (voir `LICENSE`). Le code repris des équipes conserve sa licence et ses avis de droit d'auteur, indiqués dans son dossier. Les données du projet 2 appartiennent au projet MiBioKey du CRCHUM et ne sont pas publiées dans ce site.
