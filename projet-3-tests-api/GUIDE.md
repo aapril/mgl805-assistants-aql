@@ -108,7 +108,7 @@ Les constats suivants ont été vérifiés en exécutant le prototype et en lisa
 | 5 | Le modèle est appelé par l'interface compatible OpenAI, sans schéma JSON imposé ; la réponse est nettoyée puis analysée, avec une seule relance. | Des lots entiers peuvent être perdus si un petit modèle ne produit pas un JSON valide. |
 | 6 | La couverture ne compte que les scénarios du modèle, et aucune mesure ne compare les tests générés à des défauts connus. | On ne sait pas si l'agent trouve de vrais défauts. |
 | 7 | Les dépendances de l'API de démonstration ne sont pas installées avec le projet, `model_options.max_endpoints` est ignoré, et `ruff` signale 26 écarts. | Installation et maintenance plus difficiles. |
-| 8 | L'historique Git du dépôt d'origine est perdu : le dépôt public contient un seul commit. | La contribution de chaque membre de l'équipe n'est plus traçable ; les auteurs doivent être nommés dans le README. |
+| 8 | L'historique Git du dépôt d'origine est perdu : le dépôt public contient un seul commit. | La contribution de chaque membre n'est plus traçable ; les auteurs (Christophe Kruger, Jordan Tchinda Lontsi et Octave Emmanuel Faye) sont nommés dans le README de ce dossier, mais pas encore dans le fichier `LICENSE` ni dans `pyproject.toml`. |
 
 ## 8. Dépannage
 

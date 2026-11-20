@@ -1,6 +1,6 @@
 # Projet 3 · Agent « libre de droits » de tests d'API
 
-Ce dossier contient le prototype d'agent de tests d'API réalisé par une équipe du cours MGL805 à l'automne 2026. À partir d'une spécification OpenAPI et de l'URL d'une API en marche, un modèle local (Ollama) génère des scénarios de test ; le programme y ajoute des scénarios négatifs indépendants du modèle, écrit une suite Pytest, l'exécute et produit des rapports HTML et JSON, sans exposer les secrets utilisés.
+Ce dossier contient le prototype d'agent de tests d'API réalisé à l'automne 2026 dans le cours MGL805 par Christophe Kruger, Jordan Tchinda Lontsi et Octave Emmanuel Faye. À partir d'une spécification OpenAPI et de l'URL d'une API en marche, un modèle local (Ollama) génère des scénarios de test ; le programme y ajoute des scénarios négatifs indépendants du modèle, écrit une suite Pytest, l'exécute et produit des rapports HTML et JSON, sans exposer les secrets utilisés.
 
 - **Guide d'installation, d'exécution et état du prototype** : [`GUIDE.md`](GUIDE.md)
 - **Code de l'équipe et son README d'origine** : [`code-depart/`](code-depart/)
