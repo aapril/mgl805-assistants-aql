@@ -1,0 +1,12 @@
+{
+  "slos": [
+    {"id": "PERF-1", "text": "With 20 concurrent users, 95% of searches answer in less than 300 ms.",
+     "endpoint": "GET /search?q=python", "metric": "p95_ms", "max": 300, "at_virtual_users": 20},
+    {"id": "PERF-2", "text": "With 20 concurrent users, 95% of catalogue listings answer in less than 200 ms.",
+     "endpoint": "GET /books", "metric": "p95_ms", "max": 200, "at_virtual_users": 20},
+    {"id": "PERF-3", "text": "With 20 concurrent users, less than 1% of reservations fail.",
+     "endpoint": "POST /reserve", "metric": "error_rate", "max": 0.01, "at_virtual_users": 20},
+    {"id": "PERF-4", "text": "With 20 concurrent users, the application serves at least 100 requests per second.",
+     "metric": "throughput_rps", "min": 100, "at_virtual_users": 20}
+  ]
+}

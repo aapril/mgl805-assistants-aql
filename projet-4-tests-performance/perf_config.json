@@ -1,0 +1,10 @@
+{
+  "allowed_hosts": ["127.0.0.1", "localhost"],
+  "limits": {"max_virtual_users": 50, "max_duration_s": 120, "default_duration_s": 10},
+  "catalog": [
+    {"method": "GET", "path": "/health", "description": "Liveness check"},
+    {"method": "GET", "path": "/books", "description": "List the catalogue"},
+    {"method": "GET", "path": "/search?q=python", "description": "Search the catalogue"},
+    {"method": "POST", "path": "/reserve", "description": "Reserve a book", "body": {"book_id": 7}}
+  ]
+}

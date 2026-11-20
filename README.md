@@ -8,6 +8,7 @@ Le rôle d'un groupe d'AQL n'est plus seulement d'auditer à la fin d'un projet 
 |---|---|---|
 | [`projet-1-revue-de-code/`](projet-1-revue-de-code/) | Agent de revue de code : sept agents, preuves isolées, vérification d'ancrage, GitHub Actions, évaluation | [`GUIDE.md`](projet-1-revue-de-code/GUIDE.md) |
 | [`projet-2-tests-interfaces/`](projet-2-tests-interfaces/) | Agent de tests d'interfaces : moteur RAG et affinage Qwen à compléter, passage de Balsamiq à Figma (code de départ d'Andrew Phillips) | [`GUIDE.md`](projet-2-tests-interfaces/GUIDE.md) |
+| [`projet-4-tests-performance/`](projet-4-tests-performance/) | Agent de tests de performance : Qwen planifie la charge et explique les résultats, le programme mesure et décide | [`GUIDE.md`](projet-4-tests-performance/GUIDE.md) |
 | [`projet-5-securite/`](projet-5-securite/) | Agent d'interprétation traçable des rapports ZAP (dépôt de l'équipe) | [`README.md`](projet-5-securite/README.md) |
 | [`projet-6-accessibilite/`](projet-6-accessibilite/) | Agent d'accessibilité WCAG à trois flux (dépôt de l'équipe) | [`README.md`](projet-6-accessibilite/README.md) |
 | [`gabarit-assistant/`](gabarit-assistant/) | Gabarit pour construire votre propre assistant, avec sa fiche de spécification | [`README.md`](gabarit-assistant/README.md) |
