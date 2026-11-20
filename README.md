@@ -13,6 +13,7 @@ Le rôle d'un groupe d'AQL n'est plus seulement d'auditer à la fin d'un projet 
 | [`projet-5-securite/`](projet-5-securite/) | Agent d'interprétation traçable des rapports ZAP : modèle local, RAG sur l'OWASP Top 10, service en lecture seule | [`GUIDE.md`](projet-5-securite/GUIDE.md) |
 | [`projet-6-accessibilite/`](projet-6-accessibilite/) | Agent d'accessibilité WCAG à trois flux : règles axe-core, test clavier scripté, modèle de vision local | [`GUIDE.md`](projet-6-accessibilite/GUIDE.md) |
 | [`projet-7-architecture-dette-technique/`](projet-7-architecture-dette-technique/) | Agent d'évaluation de l'architecture et de la dette technique : règles de couches, cycles, complexité, duplication ; Qwen classe la dette et explique, le programme décide | [`GUIDE.md`](projet-7-architecture-dette-technique/GUIDE.md) |
+| [`projet-8-triage-bogues/`](projet-8-triage-bogues/) | Agent de triage des bogues : journaux de préproduction, validations Git du déploiement, reproduction qui confirme la cause ; Qwen rédige les rapports, le programme décide | [`GUIDE.md`](projet-8-triage-bogues/GUIDE.md) |
 | [`gabarit-assistant/`](gabarit-assistant/) | Gabarit pour construire votre propre assistant, avec sa fiche de spécification | [`README.md`](gabarit-assistant/README.md) |
 
 ## Environnement de travail

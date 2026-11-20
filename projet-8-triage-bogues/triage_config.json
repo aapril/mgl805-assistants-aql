@@ -1,0 +1,19 @@
+{
+  "limits": {
+    "max_log_bytes": 5000000,
+    "max_signatures": 50,
+    "max_diff_chars": 3000,
+    "excerpt_context": 6
+  },
+  "path_prefixes": ["/srv/library/"],
+  "deploy_pattern": "deploy version=(?P<ref>[\\w.\\-/]+)",
+  "execution": {
+    "allowed": true,
+    "timeout_s": 30,
+    "repro_dir": "examples/repro",
+    "reproductions": [
+      {"exception": "ZeroDivisionError", "command": ["python", "-m", "unittest", "-q", "test_repro_fines"]},
+      {"exception": "KeyError", "command": ["python", "-m", "unittest", "-q", "test_repro_notify"]}
+    ]
+  }
+}
