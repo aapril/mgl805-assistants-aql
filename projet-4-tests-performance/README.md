@@ -26,6 +26,6 @@ python -m perfagent.cli run --model demo
 cat "$(ls -td runs/*/ | head -1)report.md"
 ```
 
-Les tests affichent `Ran 14 tests` puis `OK` ; la dernière commande montre un rapport qui recommande `changes_recommended`, parce que les deux défauts injectés font échouer deux exigences de performance. Pour utiliser Qwen, voir la section 5 du guide.
+Les tests affichent `Ran 17 tests` puis `OK` ; la dernière commande montre un rapport qui recommande `changes_recommended`, parce que les deux défauts injectés font échouer deux exigences de performance. Pour utiliser Qwen, voir la section 5 du guide.
 
 **N'exécutez des tests de charge que sur une application qui vous appartient ou que vous êtes explicitement autorisé à tester.**

@@ -2,7 +2,8 @@
 from pathlib import Path
 
 MARK = {"measured": " (numbers found in the measurements)", "partly": " (SOME NUMBERS NOT MEASURED)",
-        "absent": " (NOT FOUND in the measurements)", None: ""}
+        "absent": " (NOT FOUND in the measurements)",
+        "contradicts": " (CONTRADICTS the measured requirements)", None: ""}
 
 
 def markdown(r):

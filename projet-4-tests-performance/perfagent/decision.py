@@ -22,6 +22,8 @@ def decide(measurement, slos, analysis, adjustments):
     for f in analysis.findings:
         if f.grounded in ("absent", "partly"):
             missing.append(f"Model finding '{f.title[:80]}' cites values that were not measured; check it.")
+        elif f.grounded == "contradicts":
+            missing.append(f"Model finding '{f.title[:80]}' contradicts the measured requirements; check it.")
     if changes:
         return "changes_recommended", changes + missing
     if missing:

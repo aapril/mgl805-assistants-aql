@@ -42,7 +42,8 @@ class Ollama:
 
     def request(self, instruction, schema_model, payload):
         return {"model": self.name, "stream": False, "format": _schema(schema_model),
-                "options": {"temperature": 0, "num_ctx": int(os.getenv("OLLAMA_NUM_CTX", "8192"))},
+                "options": {"temperature": 0, "num_ctx": int(os.getenv("OLLAMA_NUM_CTX", "8192")),
+                            "num_predict": 2048},  # a bounded answer, even if the model repeats itself
                 "messages": [{"role": "system", "content": SYSTEM + "\n" + instruction},
                              {"role": "user", "content": json.dumps(payload, ensure_ascii=False)}]}
 

@@ -63,7 +63,7 @@ class Finding(StrictModel):
     evidence: str = Field(max_length=1500)  # must cite measured numbers
     recommendation: str = Field(max_length=1500)
     source: Literal["model", "tool"] = "model"  # set by the program
-    grounded: Literal["measured", "partly", "absent"] | None = None  # set by the program
+    grounded: Literal["measured", "partly", "absent", "contradicts"] | None = None  # set by the program
 
 
 class Analysis(StrictModel):

@@ -44,7 +44,7 @@ pip install -r requirements.txt
 python -m unittest discover -s tests
 ```
 
-Les 14 tests doivent afficher `Ran 14 tests` puis `OK`, en une dizaine de secondes : certains démarrent l'application de démonstration et génèrent une vraie charge pendant une ou deux secondes.
+Les 17 tests doivent afficher `Ran 17 tests` puis `OK`, en une dizaine de secondes : certains démarrent l'application de démonstration et génèrent une vraie charge pendant une ou deux secondes.
 
 ## 4. Exécution avec l'application de démonstration
 
@@ -86,8 +86,10 @@ Avec 8 Go de mémoire, utilisez `qwen2.5-coder:1.5b` et fermez Docker Desktop ; 
 **Ce qu'il faut observer dans le rapport.**
 
 - Le scénario proposé par Qwen : utilise-t-il le nombre d'utilisateurs que demandent les exigences ? Le mélange des requêtes est-il réaliste ? Le programme a-t-il dû l'ajuster ?
-- L'analyse de Qwen : chaque constat porte une marque ajoutée par le programme, *numbers found in the measurements*, *SOME NUMBERS NOT MEASURED* ou *NOT FOUND*. Un constat qui cite un nombre jamais mesuré ne compte pas et renvoie le rapport à une personne.
+- L'analyse de Qwen : chaque constat porte une marque ajoutée par le programme : *numbers found in the measurements*, *SOME NUMBERS NOT MEASURED*, *NOT FOUND* ou *CONTRADICTS the measured requirements*. Le programme vérifie que chaque nombre cité a été mesuré, dans la bonne unité, et que le verdict du constat ne contredit pas celui des exigences ; sinon, le constat renvoie le rapport à une personne.
 - La recommandation : elle dépend seulement des exigences et des mesures, jamais de l'analyse de Qwen.
+
+**Exemple réel.** Le 20 novembre 2026, sur un Mac Apple Silicon de 8 Go avec `qwen2.5-coder:1.5b`, Qwen a proposé 20 utilisateurs pendant 120 secondes, avec un mélange qui privilégie les réservations ; l'exécution complète a duré environ six minutes. Le programme a mesuré 16 735 requêtes et conclu, comme sans modèle, que PERF-1 (recherche, p95 de 484 ms) et PERF-3 (2,49 % de réservations en erreur) échouaient. L'analyse de Qwen a bien désigné la recherche trop lente, mais avec un conseil générique (« optimiser l'algorithme de recherche »), sans trouver la vraie cause, une seule connexion partagée. Elle a surtout affirmé que « le taux d'échec des réservations est de 0,0249 %, ce qui respecte le seuil » : le nombre avait bien été mesuré, mais c'est une fraction (2,49 %), et l'exigence avait échoué. La première version de la vérification, qui ne contrôlait que l'existence des nombres, a laissé passer ce constat ; la version actuelle contrôle aussi l'unité et le verdict, et le marque *CONTRADICTS*. Un test (`ReplayOfNovember20Tests`) rejoue cette analyse. La recommandation, elle, était juste dès le départ, parce qu'elle ne dépend pas du modèle.
 
 ## 6. Adapter l'agent à votre application
 

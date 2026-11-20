@@ -149,3 +149,40 @@ class PipelineTests(App, unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ReplayOfNovember20Tests(unittest.TestCase):
+    """Replays the analysis of qwen2.5-coder:1.5b on a Mac with 8 GB, November 20, 2026."""
+
+    def setUp(self):
+        from perfagent.contracts import EndpointStats, Measurement
+        eps = [EndpointStats(method="GET", path=p, requests=r, errors=e, error_rate=round(e / r, 4), mean_ms=m,
+                             p50_ms=m, p95_ms=p95, p99_ms=p95, max_ms=p95)
+               for p, r, e, m, p95 in [("/health", 1676, 0, 2.34, 3.83), ("/books", 3412, 0, 8.71, 10.42),
+                                       ("/search?q=python", 5019, 0, 454.01, 484.06)]]
+        eps.append(EndpointStats(method="POST", path="/reserve", requests=6628, errors=165, error_rate=0.0249,
+                                 mean_ms=14.83, p50_ms=14.83, p95_ms=16.67, p99_ms=18.93, max_ms=41.86))
+        self.m = Measurement(target="t", scenario=scenario(users=20, duration=120), started_at="x", elapsed_s=120.45,
+                             total_requests=16735, throughput_rps=138.94, error_rate=0.0099, endpoints=eps)
+        self.slos = slo_mod.evaluate(SLOS, self.m)
+
+    def finding(self, evidence, title="t"):
+        a = Analysis(summary="s", findings=[Finding(severity="low", title=title, evidence=evidence, recommendation="No action needed.")])
+        return grounding.check(a, self.m, self.slos, self.m.scenario, {"/health", "/books", "/search", "/reserve"})
+
+    def test_right_number_wrong_unit_and_wrong_verdict_is_caught(self):
+        a = self.finding("The reservation failure rate is 0.0249%, which is within the threshold.", "Reservation failure rate")
+        self.assertEqual(a.findings[0].grounded, "contradicts")
+        self.assertTrue(any("PERF-3" in x and "not met" in x for x in a.limitations))
+        self.assertTrue(any("0.0249%" in x for x in a.limitations))
+        decision, reasons = decide(self.m, self.slos, a, [])
+        self.assertEqual(decision, "changes_recommended")  # the rule, not the model, decides
+        self.assertTrue(any("contradicts" in r for r in reasons))
+
+    def test_correct_findings_of_the_same_run_stay_grounded(self):
+        self.assertEqual(self.finding("The p95 response time for searches is 484.06 ms, which exceeds the threshold of 300 ms.").findings[0].grounded, "measured")
+        self.assertEqual(self.finding("The p95 response time for catalogue listings is 10.42 ms, which is within the threshold.").findings[0].grounded, "measured")
+        self.assertEqual(self.finding("The reservation failure rate is 2.49%, above the threshold of 1%.").findings[0].grounded, "measured")
+
+    def test_small_numbers_need_a_close_match(self):
+        self.assertEqual(self.finding("The error rate is 0.75%.").findings[0].grounded, "absent")
